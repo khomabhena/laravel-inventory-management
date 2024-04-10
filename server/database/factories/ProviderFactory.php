@@ -17,7 +17,10 @@ class ProviderFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id'=> 1,
+            'name'=> $this->faker->name,
+            'address' => fake()->address,
+            'email' => $this->faker->email,
         ];
     }
 }
