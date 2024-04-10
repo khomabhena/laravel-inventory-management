@@ -13,8 +13,9 @@ class ProviderController extends Controller
      */
     public function index()
     {
-        $data = Provider::query()->orderBy('created_at', 'asc')->paginate();
-        return json_encode($data);
+        $data = Provider::query()->orderBy('created_at', 'asc')->get();
+        
+        return ['data' => $data];
     }
 
     /**
