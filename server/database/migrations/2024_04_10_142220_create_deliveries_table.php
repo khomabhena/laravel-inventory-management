@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('customer_id')->constrained('customers');
+            $table->date('sales_date');
             $table->timestamps();
         });
     }
